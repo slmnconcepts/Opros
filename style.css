@@ -1,0 +1,439 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    min-height: 100vh;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+}
+
+/* Заголовок */
+.header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.survey-badge {
+    background: #ff6b6b;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Навигация */
+.nav-tabs {
+    display: flex;
+    background: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.nav-tab {
+    flex: 1;
+    padding: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: #6c757d;
+    transition: all 0.3s ease;
+}
+
+.nav-tab.active {
+    background: white;
+    color: #1a1a2e;
+    border-bottom: 3px solid #667eea;
+}
+
+.nav-tab:hover {
+    background: #e9ecef;
+}
+
+/* Контент */
+.tab-content {
+    display: none;
+    padding: 30px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Введение */
+.survey-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.survey-intro h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #1a1a2e;
+}
+
+.survey-intro p {
+    font-size: 18px;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.bonus {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+    padding: 15px 25px;
+    border-radius: 25px;
+    display: inline-block;
+    font-weight: bold;
+    color: #2d3436;
+    box-shadow: 0 5px 15px rgba(250, 177, 160, 0.3);
+}
+
+/* Блоки вопросов */
+.question-block {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-left: 5px solid #667eea;
+}
+
+.question-block h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #1a1a2e;
+}
+
+.question {
+    margin-bottom: 25px;
+}
+
+.question label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2d3436;
+}
+
+/* Радио кнопки */
+.radio-group, .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radio-group label, .checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.radio-group label:hover, .checkbox-group label:hover {
+    background: #e9ecef;
+}
+
+.radio-group input, .checkbox-group input {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+/* Поля ввода */
+input[type="text"], textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.other-input {
+    margin-top: 10px;
+}
+
+/* Гипотеза */
+.hypothesis {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.hypothesis p {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #1a1a2e;
+}
+
+.hypothesis ul {
+    margin-left: 20px;
+}
+
+.hypothesis li {
+    margin-bottom: 5px;
+    color: #2d3436;
+}
+
+/* Кнопка отправки */
+.submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+/* Результаты */
+.results-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.results-header h2 {
+    font-size: 24px;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+}
+
+.stats-summary {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 36px;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.result-block {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.result-block h4 {
+    color: #1a1a2e;
+    margin-bottom: 15px;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-label {
+    flex: 1;
+}
+
+.result-count {
+    background: #667eea;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.result-bar {
+    width: 100%;
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.result-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transition: width 0.5s ease;
+}
+
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: #6c757d;
+}
+
+/* Футер */
+.footer {
+    background: #1a1a2e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.footer p {
+    margin-bottom: 5px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        margin: 0;
+    }
+    
+    .tab-content {
+        padding: 20px;
+    }
+    
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .survey-intro h1 {
+        font-size: 24px;
+    }
+    
+    .stats-summary {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Анимации */
+.question-block {
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Чекбоксы стилизация */
+input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #667eea;
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background: #667eea;
+}
+
+input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: -2px;
+    left: 3px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Радио кнопки стилизация */
+input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #667eea;
+    border-radius: 50%;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked {
+    background: #667eea;
+}
+
+input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}

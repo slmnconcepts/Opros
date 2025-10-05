@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Экспресс опрос - Проблемы бизнеса</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Заголовок -->
+        <div class="header">
+            <div class="logo">SA STUDIO</div>
+            <div class="survey-badge">ЭКСПРЕСС ОПРОС</div>
+        </div>
+
+        <!-- Навигация -->
+        <nav class="nav-tabs">
+            <button class="nav-tab active" data-tab="survey">Опрос</button>
+            <button class="nav-tab" data-tab="results">Результаты</button>
+        </nav>
+
+        <!-- Форма опроса -->
+        <div id="survey" class="tab-content active">
+            <div class="survey-intro">
+                <h1>🎯 Изучаем проблемы малого бизнеса</h1>
+                <p>Помогите создать продукт, который реально решит ваши проблемы. Займет 3 минуты.</p>
+                <div class="bonus">🎁 За участие - бесплатная консультация по бизнесу</div>
+            </div>
+
+            <form id="surveyForm" class="survey-form">
+                <!-- Блок 1: О бизнесе -->
+                <div class="question-block">
+                    <h3>📊 О вашем бизнесе</h3>
+                    
+                    <div class="question">
+                        <label>1. Ваша сфера деятельности?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="business_type" value="retail"> Розничная торговля</label>
+                            <label><input type="radio" name="business_type" value="services"> Услуги (ремонт, красота, авто)</label>
+                            <label><input type="radio" name="business_type" value="food"> Общепит (кафе, доставка)</label>
+                            <label><input type="radio" name="business_type" value="production"> Производство/мастерская</label>
+                            <label><input type="radio" name="business_type" value="other"> Другое</label>
+                        </div>
+                        <input type="text" name="business_type_other" placeholder="Укажите другое..." class="other-input" style="display:none;">
+                    </div>
+
+                    <div class="question">
+                        <label>2. Среднемесячная выручка?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="revenue" value="0-100k"> До 100 тыс. руб</label>
+                            <label><input type="radio" name="revenue" value="100-300k"> 100-300 тыс. руб</label>
+                            <label><input type="radio" name="revenue" value="300-500k"> 300-500 тыс. руб</label>
+                            <label><input type="radio" name="revenue" value="500k-1m"> 500 тыс - 1 млн руб</label>
+                            <label><input type="radio" name="revenue" value="1m+"> Больше 1 млн руб</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блок 2: Проблемы -->
+                <div class="question-block">
+                    <h3>🔥 Главные проблемы</h3>
+                    
+                    <div class="question">
+                        <label>3. Главная проблема в бизнесе СЕЙЧАС? (до 2 вариантов)</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="main_problems" value="few_clients"> Мало клиентов/заказов</label>
+                            <label><input type="checkbox" name="main_problems" value="competition"> Высокая конкуренция</label>
+                            <label><input type="checkbox" name="main_problems" value="dont_know_what_to_buy"> Не знаю что заказывать/закупать</label>
+                            <label><input type="checkbox" name="main_problems" value="dead_stock"> Товар лежит мертвым грузом</label>
+                            <label><input type="checkbox" name="main_problems" value="no_money"> Не хватает денег на развитие</label>
+                            <label><input type="checkbox" name="main_problems" value="staff"> Сложно найти хороших сотрудников</label>
+                            <label><input type="checkbox" name="main_problems" value="routine"> Много времени на рутину</label>
+                            <label><input type="checkbox" name="main_problems" value="no_analytics"> Не понимаю финансовые показатели</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <label>4. Как принимаете бизнес-решения?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="decision_making" value="intuition"> Интуитивно, по опыту</label>
+                            <label><input type="radio" name="decision_making" value="advice"> Советуюсь с коллегами/друзьями</label>
+                            <label><input type="radio" name="decision_making" value="competitors"> Изучаю конкурентов</label>
+                            <label><input type="radio" name="decision_making" value="analytics"> Анализирую цифры и отчеты</label>
+                            <label><input type="radio" name="decision_making" value="consultants"> Нанимаю консультантов</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <label>5. Что больше всего бесит в ведении бизнеса?</label>
+                        <textarea name="biggest_pain" placeholder="Напишите своими словами..." rows="3"></textarea>
+                    </div>
+                </div>
+
+                <!-- Блок 3: Готовность платить -->
+                <div class="question-block">
+                    <h3>💰 Готовность инвестировать</h3>
+                    
+                    <div class="question">
+                        <label>6. Сколько готовы платить за РЕАЛЬНО полезный совет по бизнесу?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="payment_readiness" value="free"> Бесплатно или никак</label>
+                            <label><input type="radio" name="payment_readiness" value="1k"> До 1000 руб/месяц</label>
+                            <label><input type="radio" name="payment_readiness" value="1-3k"> 1000-3000 руб/месяц</label>
+                            <label><input type="radio" name="payment_readiness" value="3-5k"> 3000-5000 руб/месяц</label>
+                            <label><input type="radio" name="payment_readiness" value="5k+"> Больше 5000 руб/месяц</label>
+                            <label><input type="radio" name="payment_readiness" value="percentage"> Готов платить % с результата</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блок 4: ИИ -->
+                <div class="question-block">
+                    <h3>🤖 Отношение к ИИ</h3>
+                    
+                    <div class="question">
+                        <label>7. Пользуетесь ли ChatGPT/нейросетями?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="ai_usage" value="constantly"> Да, постоянно</label>
+                            <label><input type="radio" name="ai_usage" value="sometimes"> Иногда пробую</label>
+                            <label><input type="radio" name="ai_usage" value="heard"> Слышал, но не пользуюсь</label>
+                            <label><input type="radio" name="ai_usage" value="distrust"> Не доверяю этому</label>
+                            <label><input type="radio" name="ai_usage" value="unknown"> Что это такое?</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <label>8. Доверили бы ИИ давать советы по бизнесу?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="ai_trust" value="yes_if_works"> Да, если советы работают</label>
+                            <label><input type="radio" name="ai_trust" value="additional"> Только как дополнение к человеку</label>
+                            <label><input type="radio" name="ai_trust" value="no"> Нет, не доверяю</label>
+                            <label><input type="radio" name="ai_trust" value="depends_price"> Зависит от цены</label>
+                            <label><input type="radio" name="ai_trust" value="dont_know"> Не знаю</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блок 5: Гипотеза -->
+                <div class="question-block">
+                    <h3>🎯 Наша гипотеза</h3>
+                    
+                    <div class="hypothesis">
+                        <p><strong>Представьте: есть ИИ-помощник, который:</strong></p>
+                        <ul>
+                            <li>Анализирует ваши продажи</li>
+                            <li>Знает вашу нишу и конкурентов</li>
+                            <li>Дает конкретные советы ("завтра сделайте скидку 15% на товар X")</li>
+                            <li>Берет плату только если совет сработал (% с прироста)</li>
+                        </ul>
+                    </div>
+
+                    <div class="question">
+                        <label>9. Интересно?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="hypothesis_interest" value="very"> Очень! Где взять?</label>
+                            <label><input type="radio" name="hypothesis_interest" value="interesting"> Интересно, но есть сомнения</label>
+                            <label><input type="radio" name="hypothesis_interest" value="not_really"> Не очень, предпочитаю людей</label>
+                            <label><input type="radio" name="hypothesis_interest" value="not_at_all"> Совсем не интересно</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <label>10. Главное опасение по поводу такого ИИ?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="main_concern" value="bad_advice"> Даст плохой совет</label>
+                            <label><input type="radio" name="main_concern" value="data_security"> Украдет/сольет данные</label>
+                            <label><input type="radio" name="main_concern" value="complexity"> Слишком сложно разобраться</label>
+                            <label><input type="radio" name="main_concern" value="expensive"> Дорого выйдет</label>
+                            <label><input type="radio" name="main_concern" value="no_understanding"> Не понимает специфику моего бизнеса</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Контакты -->
+                <div class="question-block">
+                    <h3>📞 Контакты (необязательно)</h3>
+                    
+                    <div class="question">
+                        <label>11. Хотели бы протестировать продукт бесплатно?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="testing_interest" value="yes"> Да! Готов к тестированию</label>
+                            <label><input type="radio" name="testing_interest" value="maybe"> Возможно, напишите мне</label>
+                            <label><input type="radio" name="testing_interest" value="no"> Пока не готов</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <label>Ваш контакт для связи (телефон, email, telegram):</label>
+                        <input type="text" name="contact" placeholder="Необязательно, но поможет связаться">
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">📱 Отправить ответы в WhatsApp</button>
+            </form>
+        </div>
+
+        <!-- Результаты -->
+        <div id="results" class="tab-content">
+            <div class="results-header">
+                <h2>📊 Результаты опроса</h2>
+                <p>Обновляется в реальном времени</p>
+                <div class="stats-summary">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalResponses">0</span>
+                        <span class="stat-label">Ответов</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="resultsContent">
+                <div class="no-results">
+                    <p>Пока нет ответов. Будьте первым! 🚀</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Футер -->
+        <footer class="footer">
+            <p>Создано для изучения потребностей малого бизнеса</p>
+            <p>Все данные обрабатываются анонимно</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
